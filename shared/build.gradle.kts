@@ -14,7 +14,7 @@ kotlin {
             }
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -53,9 +53,13 @@ tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = freeCompilerArgs + listOf(
             "-P",
-            "plugin:$functionPrinterPluginId:tag=Nunu",
+            "plugin:$functionPrinterPluginId:printer=Nunu",
         )
     }
+}
+
+tasks.create("testClasses").doLast {
+    println("Test classes task")
 }
 
 dependencies {
