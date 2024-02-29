@@ -15,7 +15,7 @@ const val PluginId = "dev.nunu.multiplatform.printer"
 val KEY_TAG = CompilerConfigurationKey<String>("Printer Tag")
 val OPTION_TAG = CliOption(
     optionName = "printer",
-    valueDescription = "Function printer",
+    valueDescription = "String",
     description = KEY_TAG.toString()
 )
 
