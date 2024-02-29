@@ -8,7 +8,7 @@ gradlePlugin {
     plugins {
         create("debuglog-plugin") {
             id = "dev.nunu.multiplatform.debuglog.plugin"
-            implementationClass = "dev.nunu.multiplatform.gradle.plugin.MyClass"
+            implementationClass = "dev.nunu.multiplatform.gradle.plugin.DebugLogGradlePlugin"
         }
     }
 }
