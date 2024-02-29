@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "KotlinCompilerMutliplatformPlayground"
-include(":shared")
+include(":shared", ":compiler-plugin")
