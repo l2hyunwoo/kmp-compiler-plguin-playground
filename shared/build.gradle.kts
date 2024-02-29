@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.plugin.PLUGIN_CLASSPATH_CONFIGURATION_NAME
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
@@ -43,4 +46,18 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
+
+tasks.withType<KotlinCompile> {
+    val functionPrinterPluginId = "dev.nunu.multiplatform.printer"
+    kotlinOptions {
+        freeCompilerArgs = freeCompilerArgs + listOf(
+            "-P",
+            "plugin:$functionPrinterPluginId:tag=Nunu",
+        )
+    }
+}
+
+dependencies {
+    PLUGIN_CLASSPATH_CONFIGURATION_NAME(project(":compiler-plugin"))
 }
