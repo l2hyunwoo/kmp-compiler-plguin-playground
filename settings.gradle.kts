@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "KotlinCompilerMutliplatformPlayground"
-include(":shared", ":compiler-plugin")
+include(":shared", ":compiler-plugin", ":gradle-plugin")
