@@ -84,7 +84,11 @@ class DebugLogClassBuilder(
 
             override fun visitInsn(opcode: Int) {
                 when (opcode) {
-                    Opcodes.RETURN, Opcodes.ARETURN, Opcodes.IRETURN -> {
+                    // all of the opcodes that result in a return
+                    Opcodes.RETURN, // void return
+                    Opcodes.ARETURN, // object return
+                    Opcodes.IRETURN, Opcodes.FRETURN, Opcodes.LRETURN, Opcodes.DRETURN // int, float, long, double return
+                    -> {
                         InstructionAdapter(this).apply {
                             anew(Type.getType(StringBuilder::class.java))
                             dup()

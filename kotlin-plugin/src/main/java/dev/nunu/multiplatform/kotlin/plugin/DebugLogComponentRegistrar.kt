@@ -12,6 +12,7 @@ import org.jetbrains.kotlin.config.CompilerConfiguration
 class DebugLogComponentRegistrar : CompilerPluginRegistrar() {
     override val supportsK2 = false
 
+    @OptIn(ExperimentalCompilerApi::class)
     override fun ExtensionStorage.registerExtensions(configuration: CompilerConfiguration) {
         if (configuration[KEY_ENABLED] != true) return
         ClassGeneratorExtension.registerExtension(
